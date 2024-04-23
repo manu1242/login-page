@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+ 
+</head>
+<style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: sans-serif;
+}
+  .container {
+  
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full height of viewport */
+    background-image: linear-gradient(43deg, #314ee0 0%, #d015c4 67%, #d3a144 100%);
+    
+  
+  }
+  
+  .box {
+    width: 400px;
+    height: 320px;
+    background-color: #4158D0;
+   background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 67%, #FFCC70 100%);
+    border-radius: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1 0 px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-in-out; 
+  }
+.box::before {
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0;
+}
+.box:hover::before {
+    opacity: 1;
+}
+.box:hover {
+    box-shadow:0 0 20px 10px rgba(109, 0, 233, 0.5);
+}
+  .text1{
+    margin-bottom: 20px;
+    text-align: center;
+    
+
+  }
+
+ .form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: #3e3d3d;
+    font-size: 15px;
+    font-weight: 100vh;
+    margin-bottom: 8px;
+  }
+  
+  .button{
+    border-radius: 10px;
+    margin-top: 15px;
+    height:5vh ;
+    width:15vh ;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 100vh;
+    background-color: #3e3d3d;
+    cursor: pointer;
+    border: none;
+    margin-left: 5px;
+    align-content: end;
+    background: transparent;
+    
+  }
+  .signin{
+    border-radius: 10px;
+    margin-top: 15px;
+    height:5vh ;
+    width:15vh ;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 100vh;
+    background-color: #3e3d3d;
+    cursor: pointer;
+    margin-left: 5px;
+    border: none;
+    margin-left: 115px;
+    background: transparent;
+   
+  }
+  input[type="submit"] {
+    width: 20vh;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color:#3e3d3d;
+    color: #fff;
+    cursor: pointer;
+    margin-left: 100px;
+    background: transparent;
+}
+input[type="text"]:hover {
+    background-color: #e9e143;
+    box-shadow:0 0 20px 10px rgba(156, 225, 7, 0.5);
+    
+    
+}
+input[type="password"]:hover {
+  background-color: #e3d408;
+  box-shadow:0 0 20px 10px rgba(156, 225, 7, 0.5);
+ 
+}
+input[type="submit"]:hover {
+  background-color: #e3d408;
+  box-shadow:0 0 20px 10px rgba(156, 225, 7, 0.5);
+  
+  
+}
+.button:hover{
+  background-color: #e3d408;
+
+  box-shadow:0 0 20px 10px rgba(156, 225, 7, 0.5);
+}
+.signin:hover{
+  background-color: #e3d408;
+  box-shadow:0 0 20px 10px rgba(156, 225, 7, 0.5);
+}
+@media(max-width:576px) {
+  .box{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+  
+  }
+  
+}
+
+   
+  
+  
+  
+
+  
+ 
+</style>
+<body>
+  <div class="container">
+    <div class="box">
+      <div class="text1">
+        <p><h2> Well Come To Hacker Rank</h2></p>
+      </div>
+      <div class="form-group">
+       <label >
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Name" name="username" required>
+       </label><br>
+        
+          <label for="password">Password:</label>
+          <input type="password" id="password" placeholder="Password" name="password" required>
+      </div>
+       <br>
+       <form id="forgotPasswordForm">
+        <input type="submit" value="Reset Password?">
+       </form>
+       <button class="button" onclick="login()">Login</button>
+       <button class="signin" onclick="Signin()">Sign In</button>
+     </div>
+    </div>
+  </div>
+  <script>
+    function login() {
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      
+  
+      // Example validation, replace with your authentication logic
+      if (username == 'manohar' && password == 'manu11') {
+          alert('Login successful!');
+
+
+          // Redirect to another page or perform other actions here
+          window.location.href = "https://www.hackerrank.com/";
+       } 
+       else 
+       {
+          alert('Invalid username or password. Please try again.');
+         
+      }
+      
+         
+    }
+  </script>
+  
+</body>
+</html>
